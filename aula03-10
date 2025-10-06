@@ -28,9 +28,9 @@
             }
 
             if (palavra === invertida) {
-                alert(`"${palavra}" é um palíndromo!`);
+                alert(`${palavra} é um palíndromo`);
             } else {
-                alert(`"${palavra}" NÃO é um palíndromo.`);
+                alert(`${palavra} ñ é um palíndromo.`);
             }
         }
     </script>
