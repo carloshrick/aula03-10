@@ -1,32 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ex 03-10</title>
+    <title>Verificar Palíndromo</title>
     <script type="text/javascript">
-function ObterDados(){
-    let palavra = "carlos"
-    let base = 0 
-    let topo = 0 
-    let maximo  = palavra.length
-    let pilha = []
-}
+        function verificarPalindromo() {
+            let palavra = document.getElementById("palavra").value;
 
-function Caracteres(){
-    ObterDados() 
-    for(let i=0; i < palavra.length; i++){
-        let letra = palavra[i]
-    }
+            let vetor = [];
+            for (let i = 0; i < palavra.length; i++) {
+                vetor[i] = palavra[i];
+            }
 
-    
+            let pilha = [];
+            let topo = -1;
 
-}
+            for (let i = 0; i < vetor.length; i++) {
+                topo++;
+                pilha[topo] = vetor[i];
+            }
 
+            let invertida = '';
+            while (topo >= 0) {
+                invertida = invertida + [topo];
+                topo--;
+            }
+
+            if (palavra === invertida) {
+                alert(`"${palavra}" é um palíndromo!`);
+            } else {
+                alert(`"${palavra}" NÃO é um palíndromo.`);
+            }
+        }
     </script>
 </head>
 <body>
-    <input type="text" id="palavra">
-    <input type="button" value="Teste" onclick="">
+    <h2>Verificar se uma palavra é palíndromo</h2>
+    <input type="text" id="palavra" placeholder="Digite uma palavra">
+    <input type="button" value="Verificar" onclick="verificarPalindromo()">
 </body>
 </html>
